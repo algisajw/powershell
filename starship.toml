@@ -1,0 +1,185 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+[](color_blue)\
+$os\
+$username\
+[](bg:color_text fg:color_blue)\
+$directory\
+[](fg:color_text bg:color_overlay0)\
+$git_branch\
+$git_status\
+[](fg:color_overlay0 bg:color_surface1)\
+$c\
+$cpp\
+$rust\
+$golang\
+$nodejs\
+$php\
+$java\
+$kotlin\
+$haskell\
+$python\
+[](fg:color_surface1 bg:color_base)\
+$docker_context\
+$conda\
+$pixi\
+[](fg:color_base bg:color_crust)\
+$time\
+[ ](fg:color_crust)\
+$line_break$character"""
+
+palette = 'catppuccin_frappe'
+
+[palettes.catppuccin_frappe]
+color_blue = '#8caaee'
+color_lavender = '#babbf1'
+color_text = '#c6d0f5'
+color_subtext1 = '#b5bfe2'
+color_subtext0 = '#a5adce'
+color_overlay2 = '#949cbb'
+color_overlay1 = '#838ba7'
+color_overlay0 = '#737994'
+color_surface2 = '#626880'
+color_surface1 = '#51576d'
+color_surface0 = '#414559'
+color_base = '#303446'
+color_mantle = '#292c3c'
+color_crust = '#232634'
+
+[os]
+disabled = false
+style = "bg:color_blue fg:color_crust"
+
+[os.symbols]
+Windows = "󰍲"
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = "󰀵"
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Amazon = ""
+Android = ""
+AOSC = ""
+Arch = "󰣇"
+Artix = "󰣇"
+EndeavourOS = ""
+CentOS = ""
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
+Pop = ""
+
+[username]
+show_always = true
+style_user = "bg:color_blue fg:color_crust"
+style_root = "bg:color_text fg:color_base"
+format = '[ $user ]($style)'
+
+[directory]
+style = "fg:color_crust bg:color_text"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = "󰝚 "
+"Pictures" = " "
+"Developer" = "󰲋 "
+
+[git_branch]
+symbol = ""
+style = "bg:color_overlay0"
+format = '[[ $symbol $branch ](fg:color_crust bg:color_overlay0)]($style)'
+
+[git_status]
+style = "bg:color_overlay0"
+format = '[[($all_status$ahead_behind )](fg:color_crust bg:color_overlay0)]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:color_surface1"
+format = '[[ $symbol( $version) ](fg:color_text bg:color_surface1)]($style)'
+
+[c]
+symbol = " "
+style = "bg:color_surface1"
+format = '[[ $symbol( $version) ](fg:color_text bg:color_surface1)]($style)'
+
+[cpp]
+symbol = " "
+style = "bg:color_surface1"
+format = '[[ $symbol( $version) ](fg:color_text bg:color_surface1)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:color_surface1"
+format = '[[ $symbol( $version) ](fg:color_text bg:color_surface1)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:color_surface1"
+format = '[[ $symbol( $version) ](fg:color_text bg:color_surface1)]($style)'
+
+[php]
+symbol = ""
+style = "bg:color_surface1"
+format = '[[ $symbol( $version) ](fg:color_text bg:color_surface1)]($style)'
+
+[java]
+symbol = ""
+style = "bg:color_surface1"
+format = '[[ $symbol( $version) ](fg:color_text bg:color_surface1)]($style)'
+
+[kotlin]
+symbol = ""
+style = "bg:color_surface1"
+format = '[[ $symbol( $version) ](fg:color_text bg:color_surface1)]($style)'
+
+[haskell]
+symbol = ""
+style = "bg:color_surface1"
+format = '[[ $symbol( $version) ](fg:color_text bg:color_surface1)]($style)'
+
+[python]
+symbol = ""
+style = "bg:color_surface1"
+format = '[[ $symbol( $version) ](fg:color_text bg:color_surface1)]($style)'
+
+[docker_context]
+symbol = ""
+style = "bg:color_base"
+format = '[[ $symbol( $context) ](fg:color_subtext1 bg:color_base)]($style)'
+
+[conda]
+style = "bg:color_base"
+format = '[[ $symbol( $environment) ](fg:color_subtext1 bg:color_base)]($style)'
+
+[pixi]
+style = "bg:color_base"
+format = '[[ $symbol( $version)( $environment) ](fg:color_text bg:color_base)]($style)'
+
+[time]
+disabled = false
+time_format = "%R"
+style = "bg:color_crust"
+format = '[[  $time ](fg:color_subtext1 bg:color_crust)]($style)'
+
+[line_break]
+disabled = false
+
+[character]
+disabled = false
+success_symbol = '[>](bold fg:color_overlay0)'
+error_symbol = '[>](bold fg:color_text)'
+vimcmd_symbol = '[<](bold fg:color_overlay0)'
+vimcmd_replace_one_symbol = '[<](bold fg:color_lavender)'
+vimcmd_replace_symbol = '[<](bold fg:color_lavender)'
+vimcmd_visual_symbol = '[<](bold fg:color_text)'
